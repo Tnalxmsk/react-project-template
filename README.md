@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# React Project Template Repository
+리액트 프로젝트 초기 세팅 시간 단축을 위한 템플릿 프로젝트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Stack
+- React, Vitem TypeScript + SWC
+- TanstackQuery, Zustand, Styled-components
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Layer
+### src
+- app
+  - App 관련 설정
+  - layout - layout 관리
+  - providers - App 컴포넌트에 추가할 provider 관리
+  - routes - 페이지 라우팅
+  - styles - 글로벌 스타일
+- pages
+  - home, post, profile 등 페이지 라우팅 단위
+  - ui 디렉토리 생성 후 페이지 컴포넌트 관리
+  - index.ts 파일을 통해 export
+- shared
+  - assets - icon, image 파일
+  - types - type, interface 정의
